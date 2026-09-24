@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+/'Polymorphism'/
+
+class Ship{
+    - shipName : String
+    - shipYear : String
+
+    + Ship( shipName : String, shipYear : String)
+
+    + getShipName() : String
+    + setShipName( shipName : String) : void
+
+    + getShipYear() : String
+    + setShipYear( shipYear : String) : void
+
+    + print() : void
+
+}/'end of Ship'/
+
+class CruiseShip{
+    - numOfPassengers : int
+
+    + CruiseShip( shipName : String, shipYear : String,
+    numOfPassengers : int)
+
+    + getNumOfPassengers() : int
+    + setNumOfPassengers( numOfPassengers : int ) : void
+
+    + print() : void
+
+}/'end of CruiseShip'/
+
+class CargoShip{
+    - cargoCapacity : int
+
+    + CargoShip( shipName : String, shipYear : String,
+    cargoCapacity : int)
+
+    + getCargoCapacity() : int
+    + setCargoCapacity( cargoCapacity : int ) : void
+
+    + print() : void
+
+
+}/'end of CargoShip'/
+
+Ship <|-- CruiseShip
+Ship <|-- CargoShip
+
+
+@enduml
